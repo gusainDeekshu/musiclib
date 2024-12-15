@@ -1,0 +1,1006 @@
+{
+	"info": {
+		"_postman_id": "f4fff615-b057-46ac-a393-dba2ee8f3741",
+		"name": "assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33636029"
+	},
+	"item": [
+		{
+			"name": "userroutes",
+			"item": [
+				{
+					"name": "signupreouest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"admin@example2.com\",\r\n\"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginuser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"admin@example.com\",\r\n\"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"admin@example.com\",\r\n\"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getallusers",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDExNjg0Mn0.cEnYKxnB-orbBUSt8NobJmAxMkIjU6yUs1ySgKOvwZ0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3002/api/v1/users?limit=5&offset=0&role=Editor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "role",
+									"value": "Editor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adduserbyadmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDExNjg0Mn0.cEnYKxnB-orbBUSt8NobJmAxMkIjU6yUs1ySgKOvwZ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"admin@exampl4.com\",\r\n\"password\": \"password\",\r\n\"role\":\"Editor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/users/add-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"add-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteuser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDExNjg0Mn0.cEnYKxnB-orbBUSt8NobJmAxMkIjU6yUs1ySgKOvwZ0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3002/api/v1/users/675c903926b81b5589b92687",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"675c903926b81b5589b92687"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatepassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzExMH0.pfld_q1RjVJUsKWyKso6CW0Br3GWdG29_PXwzhHHU54",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"old_password\": \"password\",\r\n\"new_password\": \"newPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/users/update-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "artistsroutes",
+			"item": [
+				{
+					"name": "artistalllisting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Eminem\",\r\n \"grammy\": 15,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists?limit=5&offset=0&grammy=15&hidden=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "grammy",
+									"value": "15"
+								},
+								{
+									"key": "hidden",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getartistbyid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Eminem\",\r\n \"grammy\": 15,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists?limit=5&offset=0&grammy=15&hidden=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "grammy",
+									"value": "15"
+								},
+								{
+									"key": "hidden",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateaist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"arjitsingh\",\r\n \"grammy\": 10,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists/add-artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists",
+								"add-artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteartist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"arjitsingh\",\r\n \"grammy\": 10,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists/675ca9bde33923b6df9ac306",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists",
+								"675ca9bde33923b6df9ac306"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addArtist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"arjitsingh\",\r\n \"grammy\": 10,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists/add-artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists",
+								"add-artist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "albumroutes",
+			"item": [
+				{
+					"name": "albumlisting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Eminem\",\r\n \"grammy\": 15,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists?limit=5&offset=0&grammy=15&hidden=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "grammy",
+									"value": "15"
+								},
+								{
+									"key": "hidden",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "albumlistingbyid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Eminem\",\r\n \"grammy\": 15,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/albums/675d645c98bb948020d53e43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"albums",
+								"675d645c98bb948020d53e43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatealbum",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Marshal       lMathers LP 2\",\r\n \"year\": 2013,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/albums/675d645c98bb948020d53e43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"albums",
+								"675d645c98bb948020d53e43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletelbum",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"Marshal       lMathers LP 2\",\r\n \"year\": 2013,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/albums/675d645c98bb948020d53e43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"albums",
+								"675d645c98bb948020d53e43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addAlbum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDY4ZTBlZWE0YTQ3MzE0Y2EzZSIsImlhdCI6MTczNDEyMzE3Nn0.6gkEj_h-8U8A5P_7D20PgphymWq391hDqxl8I5mD-Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"arjitsingh\",\r\n \"grammy\": 10,\r\n \"hidden\": false\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/artists/add-artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"artists",
+								"add-artist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trackroute",
+			"item": [
+				{
+					"name": "addtracks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/add-track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"add-track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listalltracks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/add-track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"add-track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listalltracksbyid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/675d97cbac8f35f90ba64622",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"675d97cbac8f35f90ba64622"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatetracks",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n \"name\": \"Not Afraid (Explicit)\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/675d97cbac8f35f90ba64622",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"675d97cbac8f35f90ba64622"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletetrack",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n \"name\": \"Not Afraid (Explicit)\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/675d97cbac8f35f90ba64622",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"675d97cbac8f35f90ba64622"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "favouriteroutes",
+			"item": [
+				{
+					"name": "addfavourates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/add-track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"add-track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listfavourites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/add-track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"add-track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletefavourite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWM4NDIxM2VlMmExYTE1Yzc4YzIwNSIsImlhdCI6MTczNDE3MTE2Mn0.qNiEnVyPKbUDutyEVvmwNIob9bRc1Fym8bkju1xJttE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"artist_id\": \"675d6241ce89ced0816617f0\",\r\n \"album_id\": \"675d64bf98bb948020d53e46\",\r\n \"name\": \"Not Afraid\",\r\n \"duration\": 263,\r\n \"hidden\": false\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/tracks/add-track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"tracks",
+								"add-track"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
